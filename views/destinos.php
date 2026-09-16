@@ -1,25 +1,66 @@
 <?php include 'views/partials/header.php'; ?>
 <?php include 'views/partials/nav.php'; ?>
 
-<section class="contenedor">
-    <h2>Nuestros Destinos</h2>
-    <p class="descripcion">Descubre los puntos turísticos más hermosos alrededor de Oxapampa.</p>
+<section class="contenedor-destinos">
+    <div class="encabezado-destinos">
+        <h2>Ruta Turística Oxapampa - Villa Rica</h2>
+        <p>Explora los atractivos conectados a lo largo de la carretera hacia la capital del café.</p>
+    </div>
 
-    <div class="tarjetas">
-        <div class="tarjeta">
-            <h3>🏔️ Mirador El Abra</h3>
-            <p>Impresionante vista panorámica del valle oxapampino, alojamiento rústico y caminatas cortas.</p>
-            <br>
-            <a href="index.php?action=reservas" class="btn">Reservar Hospedaje</a>
+    <div class="lista-filas-destinos">
+
+        <!-- FILA 1: MIRADOR EL ABRA -->
+        <div class="fila-destino azul">
+            <div class="bloque-info">
+                <h3>🏔️ Mirador El Abra</h3>
+                <p class="descripcion-destino">
+                    Ubicado en el punto más alto de la salida de Oxapampa. Ofrece una vista panorámica privilegiada de todo el valle oxapampino, alojamiento rústico y el inicio del circuito turístico.
+                </p>
+                <div class="datos-ruta">
+                    <span>📍 <strong>Ubicación:</strong> Salida de Oxapampa a Villa Rica</span>
+                    <span>⏱️ <strong>Tiempo:</strong> 10 - 15 min desde el centro de Oxapampa</span>
+                </div>
+                <a href="index.php?action=reservas" class="btn btn-destino">Reservar Hospedaje</a>
+            </div>
+            <div class="bloque-imagen">
+                <img src="https://i.pinimg.com/1200x/15/23/52/152352b4583ca2b5df46a4681f079547.jpg" alt="Mirador El Abra">
+            </div>
         </div>
-        <div class="tarjeta">
-            <h3>💧 Catarata Río Tigre</h3>
-            <p>Hermosa caída de agua rodeada de abundante vegetación de la selva alta.</p>
+
+        <!-- FILA 2: MANANTIAL DE LA VIRGEN -->
+        <div class="fila-destino naranja">
+            <div class="bloque-info">
+                <h3>💧 Manantial de la Virgen</h3>
+                <p class="descripcion-destino">
+                    Un apacible rincón natural rodeado de densa vegetación y aguas cristalinas. Es un punto de parada tradicional para refrescarse, fotografiar la naturaleza y conectar con la serenidad del entorno.
+                </p>
+                <div class="datos-ruta">
+                    <span>📏 <strong>Distancia:</strong> ~12 km desde Oxapampa (~8 km desde El Abra)</span>
+                    <span>⏱️ <strong>Tiempo:</strong> ~20 min en auto / mototaxi</span>
+                </div>
+            </div>
+            <div class="bloque-imagen">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" alt="Manantial de la Virgen">
+            </div>
         </div>
-        <div class="tarjeta">
-            <h3>🦇 Tunqui Cueva</h3>
-            <p>Cueva de formación de estalagmitas e historia natural fascinante.</p>
+
+        <!-- FILA 3: VILLA RICA -->
+        <div class="fila-destino amarillo">
+            <div class="bloque-info">
+                <h3>☕ Villa Rica (Capital del Café más fino del mundo)</h3>
+                <p class="descripcion-destino">
+                    Famosa por sus fincas cafetaleras, la Laguna Oconal, el avistamiento de aves y sus gastronomía con fusión yanesha y austro-alemana. El destino final perfecto siguiendo la ruta.
+                </p>
+                <div class="datos-ruta">
+                    <span>📏 <strong>Distancia:</strong> ~68 km desde Oxapampa</span>
+                    <span>⏱️ <strong>Tiempo:</strong> ~1 hora y 20 min por carretera asfaltada</span>
+                </div>
+            </div>
+            <div class="bloque-imagen">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=800&auto=format&fit=crop" alt="Villa Rica">
+            </div>
         </div>
+
     </div>
 </section>
 

@@ -1,253 +1,296 @@
-/* RESET BÁSICO */
+/* ==========================================
+   1. RESET GENERAL Y FUENTES
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f4f6f8;
-    color: #333;
+    background-color: #f8fafc;
+    color: #334155;
 }
 
-/* NAVEGACIÓN */
+/* ==========================================
+   2. BARRA DE NAVEGACIÓN (NAVBAR OSCURO)
+   ========================================== */
 .navbar {
+    background-color: #1e293b !important;
+    width: 100%;
+    padding: 16px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1a252f;
-    padding: 15px 5%;
+    padding: 0 20px;
 }
 
-.navbar .logo a {
-    color: white;
-    font-size: 1.4rem;
+.logo {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
     text-decoration: none;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline-block;
 }
 
 .nav-links a {
-    color: white;
+    color: #ffffff !important;
     text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: #007bf5;
+    color: #38bdf8 !important;
 }
 
-/* BANNER PRINCIPAL (HERO) */
-.hero {
-    background-image: url('https://i.pinimg.com/1200x/15/23/52/152352b4583ca2b5df46a4681f079547.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 75vh;
-    position: relative;
-}
-
-.hero-overlay {
-    background-color: rgba(0, 0, 0, 0.45);
-    width: 100%;
-    height: 100%;
+/* ==========================================
+   3. INICIO (HERO Y TARJETAS)
+   ========================================== */
+.hero-inicio {
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+    height: 380px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
-}
-
-.hero-texto {
     color: white;
-    max-width: 600px;
-    padding: 20px;
+    padding: 0 20px;
 }
 
-.hero-texto h1 {
-    font-size: 2.8rem;
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
     margin-bottom: 10px;
+    color: #ffffff;
 }
 
-.hero-texto p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
 }
 
-.btn {
+.btn-hero {
     display: inline-block;
-    padding: 12px 24px;
-    background-color: #007bf5;
-    color: white;
+    background-color: #38bdf8;
+    color: #0f172a;
+    padding: 12px 28px;
+    border-radius: 6px;
     text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
-    font-size: 1.05rem;
-    border: none;
-    cursor: pointer;
 }
 
-.btn-pago {
-    background-color: #28a745;
-}
-
-/* CONTENEDOR AGRANDADO */
-.contenedor {
-    max-width: 1200px; /* Aumentado a 1200px para que abarque más pantalla */
+.contenedor-inicio {
+    max-width: 1100px;
     margin: 50px auto;
     padding: 0 20px;
+}
+
+.seccion-bienvenida {
     text-align: center;
+    margin-bottom: 45px;
 }
 
-.contenedor h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #1a252f;
-}
-
-.descripcion {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    line-height: 1.7;
-}
-
-/* TARJETAS PRINCIPALES AGRANDADAS */
-.tarjetas {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.tarjeta {
-    background: white;
-    flex: 1;
-    min-width: 300px;  /* Ancho mínimo aumentado */
-    padding: 35px 25px; /* Padding interno más grande */
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tarjeta:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-}
-
-.tarjeta h3 {
+.seccion-bienvenida h2 {
+    font-size: 2.2rem;
+    color: #0f172a;
     margin-bottom: 15px;
-    font-size: 1.35rem;
-    color: #007bf5;
 }
 
-.tarjeta p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* ESTILOS PARA LA VISTA DE ACTIVIDADES */
-.tarjetas-grandes {
+.grid-caracteristicas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    margin-top: 30px;
 }
 
-.tarjeta-actividad {
-    background: white;
-    padding: 30px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+.tarjeta-caracteristica {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-caracteristica h3 {
+    font-size: 1.3rem;
+    color: #0f172a;
+    margin: 10px 0;
+}
+
+/* ==========================================
+   4. DESTINOS (FILAS COLORIDAS HORIZONTALES)
+   ========================================== */
+.contenedor-destinos {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.encabezado-destinos {
     text-align: center;
+    margin-bottom: 35px;
 }
 
-.icono-actividad {
-    font-size: 3rem;
-    margin-bottom: 15px;
+.lista-filas-destinos {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-.tarjeta-actividad h3 {
-    color: #1a252f;
-    margin-bottom: 10px;
+.fila-destino {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
 }
 
-.tarjeta-actividad p {
-    color: #666;
-    line-height: 1.5;
+.bloque-info {
+    flex: 1;
+    padding: 35px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* FORMULARIOS Y COMPROBANTES */
-.formulario-card, .comprobante-card, .ticket-card {
-    background: white;
-    padding: 30px;
+.bloque-info h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.descripcion-destino {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.datos-ruta {
+    display: flex;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.18);
+    padding: 12px 18px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: left;
-    max-width: 550px;
-    margin: 0 auto;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.btn-destino {
+    align-self: flex-start;
+    background-color: #ffffff;
+    color: #0f172a;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.bloque-imagen {
+    width: 320px;
+    height: 100%;
+    min-height: 220px;
+    flex-shrink: 0;
+}
+
+.bloque-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fila-destino.azul { background-color: #3b82f6; }
+.fila-destino.naranja { background-color: #f97316; }
+.fila-destino.amarillo { 
+    background-color: #eab308; 
+    color: #0f172a; 
+}
+.fila-destino.amarillo .datos-ruta { background: rgba(255, 255, 255, 0.35); }
+.fila-destino.amarillo .btn-destino { background-color: #0f172a; color: #ffffff; }
+
+/* ==========================================
+   5. FORMULARIOS (RESERVAS Y ENTRADAS)
+   ========================================== */
+.contenedor {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.formulario-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    margin-top: 20px;
 }
 
 .grupo-campo {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
 }
 
 .grupo-campo label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1e293b;
 }
 
 .grupo-campo input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
 }
 
-/* TICKET VIRTUAL */
-.ticket-card {
-    border: 2px dashed #007bf5;
-    background: #f0f7ff;
-}
-
-.ticket-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #007bf5;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-.codigo {
-    background: #007bf5;
+.btn {
+    background-color: #2563eb;
     color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
     font-weight: bold;
+    cursor: pointer;
+    width: 100%;
 }
 
-.ticket-body p {
-    margin-bottom: 10px;
-}
-
-.qr-placeholder {
-    margin-top: 15px;
-    padding: 15px;
-    background: #e1eeff;
-    border-radius: 5px;
-    text-align: center;
-}
-
-/* FOOTER */
 footer {
-    background-color: #1a252f;
-    color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 40px;
+    padding: 20px;
+    background: #1e293b;
+    color: white;
+    margin-top: 50px;
 }

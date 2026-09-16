@@ -1,27 +1,25 @@
-<?php include 'views/partials/header.php'; ?>
-<?php include 'views/partials/nav.php'; ?>
+<?php
+// views/ticket_virtual.php
+include 'views/partials/header.php';
+include 'views/partials/nav.php';
+?>
 
-<section class="contenedor">
-    <h2>🎉 ¡Pago Confirmado! Aquí está tu Entrada Virtual</h2>
+<div class="contenedor">
+    <div class="formulario-card" style="border-top: 4px solid #22c55e; text-align: center;">
+        <h2 style="color: #15803d; margin-bottom: 10px;">¡Pago Exitoso y Ticket Generado!</h2>
+        <p>Tu entrada ha sido registrada en la base de datos de MySQL.</p>
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #e2e8f0;">
 
-    <div class="ticket-card">
-        <div class="ticket-header">
-            <h3>🏔️ BOLETO DIGITAL - MIRADOR EL ABRA</h3>
-            <span class="codigo"><?php echo htmlspecialchars($ticket['codigo']); ?></span>
+        <div style="text-align: left; background: #f8fafc; padding: 15px; border-radius: 8px;">
+            <p><strong>Código de Ticket:</strong> <?= $entrada->getId(); ?></p>
+            <p><strong>Cliente:</strong> <?= htmlspecialchars($entrada->getNombreCliente()); ?></p>
+            <p><strong>DNI:</strong> <?= htmlspecialchars($entrada->getDni()); ?></p>
+            <p><strong>Cantidad de Entradas:</strong> <?= $entrada->getCantidadEntradas(); ?></p>
+            <p><strong>Monto Total Pagado:</strong> S/ <?= number_format($entrada->calcularTotal(), 2); ?></p>
         </div>
-        <div class="ticket-body">
-            <p><strong>Visitante:</strong> <?php echo htmlspecialchars($ticket['nombre']); ?></p>
-            <p><strong>DNI:</strong> <?php echo htmlspecialchars($ticket['dni']); ?></p>
-            <p><strong>Monto Pagado:</strong> S/ <?php echo htmlspecialchars($ticket['monto']); ?></p>
-            <p><strong>Fecha de Emisión:</strong> <?php echo htmlspecialchars($ticket['fecha']); ?></p>
-            <div class="qr-placeholder">
-                <p>📱 Muestra este comprobante desde tu celular al ingresar.</p>
-            </div>
-        </div>
+
+        <a href="index.php?action=inicio" class="btn" style="display: inline-block; margin-top: 20px; text-decoration: none;">Volver al Inicio</a>
     </div>
-
-    <br>
-    <a href="index.php" class="btn">Volver al Inicio</a>
-</section>
+</div>
 
 <?php include 'views/partials/footer.php'; ?>

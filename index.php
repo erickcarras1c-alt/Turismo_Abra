@@ -1,38 +1,46 @@
 <?php
-// Activar reporte de errores para diagnóstico
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// index.php
 
-// Carga del controlador
+// 1. Cargar la conexión y los controladores/modelos requeridos
+require_once 'config/Conexion.php';
 require_once 'controllers/TurismoController.php';
 
+// 2. Instanciar el controlador principal
 $controller = new TurismoController();
-$action = isset($_GET['action']) ? $_GET['action'] : 'inicio';
 
+// 3. Capturar la acción desde la URL (por defecto carga 'inicio')
+$action = $_GET['action'] ?? 'inicio';
+
+// 4. Enrutador según la acción solicitada
 switch ($action) {
     case 'inicio':
         $controller->inicio();
         break;
-    case 'actividades':
-        $controller->actividades();
-        break;
+
     case 'destinos':
         $controller->destinos();
         break;
+
+    // Acepta 'reservas' y 'reservaciones' para redireccionar correctamente
     case 'reservas':
-        $controller->reservas();
+    case 'reservaciones':
+        $controller->reservaciones();
         break;
-    case 'procesar_reserva':
-        $controller->procesarReserva();
-        break;
+
     case 'entradas':
         $controller->entradas();
         break;
-    case 'procesar_pago':
-        $controller->procesarPago();
+
+    case 'procesarReserva':
+        $controller->procesarReserva();
         break;
+
+    case 'procesarEntrada':
+        $controller->procesarEntrada();
+        break;
+
     default:
+        // Si la ruta no existe, redirige a inicio
         $controller->inicio();
         break;
 }
